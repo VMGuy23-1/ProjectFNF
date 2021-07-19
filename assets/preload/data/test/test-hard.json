@@ -3,7 +3,7 @@
         "song": "test",
         "bpm": 150.0,
         "needsVoices": true,
-        "player1": "bf",
+        "player1": "bf-pixel",
         "player2": "bf",
         "speed": 1.6,
         "notes": [
