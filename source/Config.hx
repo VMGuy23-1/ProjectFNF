@@ -69,7 +69,7 @@ class Config extends MusicBeatState
 	 * 
 	 * Default = **true**
 	 */
-	public static var CONFIGTitle:Bool = true;
+	public static var CONFIGTitle:Bool = false;
 
 	/**
 	 * Skips the "You are using a bla bla bla projectfnf bla bla bla github bla bla bla" message
@@ -82,7 +82,7 @@ class Config extends MusicBeatState
 	 * 
 	 * Default = **ProjectFNF**
 	 */
-	public static var ModName:String = 'ProjectFNF';
+	public static var ModName:String = 'Friday Night Funkin\'';
 
 	/**
 	 * This is a WIP thing. I don't fully know what I'm gonna do with this but I might just have it make the Output be a little more in depth.

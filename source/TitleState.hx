@@ -53,10 +53,10 @@ class TitleState extends MusicBeatState
 
 		super.create();
 
-		NGio.noLogin(APIStuff.API);
+		//NGio.noLogin(APIStuff.API);
 
 		#if ng
-		var ng:NGio = new NGio(APIStuff.API, APIStuff.EncKey);
+		//var ng:NGio = new NGio(APIStuff.API, APIStuff.EncKey);
 		trace('NEWGROUNDS LOL');
 		#end
 
@@ -187,7 +187,7 @@ class TitleState extends MusicBeatState
 		blackScreen = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		credGroup.add(blackScreen);
 
-		credTextShit = new Alphabet(0, 0, "ninjamuffin99\nPhantomArcade\nkawaisprite\nevilsk8er\naflac", true);
+		credTextShit = new Alphabet(0, 0, "ninjamuffin99\nPhantomArcade\nkawaisprite\nevilsk8er", true);
 		credTextShit.screenCenter();
 
 		// credTextShit.alignment = CENTER;
@@ -273,13 +273,13 @@ class TitleState extends MusicBeatState
 		if (pressedEnter && !transitioning && skippedIntro)
 		{
 			#if !switch
-			NGio.unlockMedal(60960);
+			//NGio.unlockMedal(60960);
 
 			// If it's Friday according to da clock
 			if (Date.now().getDay() == 5)
 			{
 				trace('[ProjectFNF] GUYS ITS FRIDAY HELL YEAH');
-				NGio.unlockMedal(61034);
+				//NGio.unlockMedal(61034);
 			}
 			#end
 
@@ -293,23 +293,7 @@ class TitleState extends MusicBeatState
 
 			new FlxTimer().start(2, function(tmr:FlxTimer)
 			{
-				// Check if version is outdated
-				var version:String = "v" + Application.current.meta.get('version');
-
-				if (version.trim() != NGio.GAME_VER_NUMS.trim() && !OutdatedSubState.leftState && skip == false)
-				{
-					FlxG.switchState(new OutdatedSubState());
-					trace('OLD VERSION!');
-					trace('old ver');
-					trace(version.trim());
-					trace('cur ver');
-					trace(NGio.GAME_VER_NUMS.trim());
-				}
-				else
-				{
-					//FlxG.switchState(new TapBPMState());
 					FlxG.switchState(new MainMenuState());
-				}
 			});
 			// FlxG.sound.play(Paths.music('titleShoot'), 0.7);
 		}
@@ -369,7 +353,7 @@ class TitleState extends MusicBeatState
 		switch (curBeat)
 		{
 			case 1:
-				createCoolText(['ninjamuffin99', 'phantomArcade', 'kawaisprite', 'evilsk8er', 'aflac']);
+				createCoolText(['ninjamuffin99', 'phantomArcade', 'kawaisprite', 'evilsk8er']);
 			// credTextShit.visible = true;
 			case 3:
 				addMoreText('present');
@@ -381,9 +365,9 @@ class TitleState extends MusicBeatState
 			// credTextShit.text = 'In association \nwith';
 			// credTextShit.screenCenter();
 			case 5:
-				createCoolText(['Made', 'with']);
+				createCoolText(['in association', 'with']);
 			case 7:
-				addMoreText('ProjectFNF'); // dont remove pls
+				addMoreText('newgrounds'); // dont remove pls
 				ngSpr.visible = true;
 			// credTextShit.text += '\nNewgrounds';
 			case 8:

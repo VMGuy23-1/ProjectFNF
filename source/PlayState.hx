@@ -1670,9 +1670,9 @@ class PlayState extends MusicBeatState
 				}
 		
 				if (FlxG.save.data.botplay) {
-					infoTxt.text = "BOTPLAY // ProjectFNF " + Application.current.meta.get('version');
+					infoTxt.text = "BOTPLAY // Friday Night Funkin' " + Application.current.meta.get('version');
 				} else if (!FlxG.save.data.advancedinfobar) {
-						infoTxt.text = "Misses: " + songNotesMissed + " // Health: " + healthBar.percent + "% // Score: " + songScore + " // ProjectFNF " + Application.current.meta.get('version');
+						infoTxt.text = "Misses: " + songNotesMissed + " // Health: " + healthBar.percent + "% // Score: " + songScore + " // Friday Night Funkin' " + Application.current.meta.get('version');
 					//	infoTxt.updateHitbox(); 
 				} else {
 					// the things i do for funny colors
@@ -1711,7 +1711,7 @@ class PlayState extends MusicBeatState
 						}
 						finalthing += item + ": " + lol + " // ";
 					}
-					infoTxt.applyMarkup(finalthing + "ProjectFNF " + Application.current.meta.get('version'),
+					infoTxt.applyMarkup("Friday Night Funkin' " + Application.current.meta.get('version'),
 						[
 							new FlxTextFormatMarkerPair(fullClearFormat, "!"),
 							new FlxTextFormatMarkerPair(sFormat, "<"),
@@ -2285,7 +2285,7 @@ class PlayState extends MusicBeatState
 	
 					if (SONG.validScore)
 					{
-						NGio.unlockMedal(60961);
+						//NGio.unlockMedal(60961);
 						Highscore.saveWeekScore(storyWeek, campaignScore, storyDifficulty);
 					}
 	
