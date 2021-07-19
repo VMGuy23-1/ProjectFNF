@@ -1,4 +1,4 @@
-package; #if desktop import Discord.DiscordClient;
+package; #if desktop 
 
 import sys.thread.Thread; #end import flixel.FlxG;
 import flixel.FlxSprite;
@@ -90,7 +90,6 @@ class TitleState extends MusicBeatState
 		#end
 
 		#if desktop
-		DiscordClient.initialize();
 		#end
 	}
 

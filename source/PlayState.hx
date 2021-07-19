@@ -3,7 +3,6 @@ package;
 import haxe.Timer;
 import lime.app.Application;
 #if desktop
-import Discord.DiscordClient;
 #end
 import Section.SwagSection;
 import Song.SwagSong;
@@ -316,7 +315,6 @@ class PlayState extends MusicBeatState
 		detailsPausedText = "Paused on " + detailsText;
 
 		// Updating Discord Rich Presence.
-		DiscordClient.changePresence(detailsText, "Version " + Application.current.meta.get('version'), iconRPC);
 		#end
 
 	if (!FlxG.save.data.maxoptimization) {
@@ -1212,7 +1210,6 @@ class PlayState extends MusicBeatState
 			detailsPausedText = "Paused on " + detailsText;
 
 		// Updating Discord Rich Presence (with Time Left)
-		DiscordClient.changePresence(detailsText, "Version " + Application.current.meta.get('version'), iconRPC, true, songLength);
 		updateLoop();
 		#end
 	}
@@ -1234,8 +1231,6 @@ class PlayState extends MusicBeatState
 				// String for when the game is paused
 				detailsPausedText = "Paused on " + detailsText;
 
-			DiscordClient.changePresence(detailsText, "Version " + Application.current.meta.get('version'), 
-				iconRPC);
 			updateLoop();
 		}, 5000);
 		#end
@@ -1526,15 +1521,6 @@ class PlayState extends MusicBeatState
 		
 				// String for when the game is paused
 				detailsPausedText = "Paused on " + detailsText;
-
-			if (startTimer.finished)
-			{
-				DiscordClient.changePresence(detailsText, "Version " + Application.current.meta.get('version'));
-			}
-			else
-			{
-				DiscordClient.changePresence(detailsText, "Version " + Application.current.meta.get('version'), iconRPC);
-			}
 			#end
 		}
 
@@ -1559,14 +1545,6 @@ class PlayState extends MusicBeatState
 				detailsPausedText = "Paused on " + detailsText;
 
 				
-			if (Conductor.songPosition > 0.0)
-			{
-				DiscordClient.changePresence(detailsText, "Version " + Application.current.meta.get('version'));
-			}
-			else
-			{
-				DiscordClient.changePresence(detailsText, "Version " + Application.current.meta.get('version'), iconRPC);
-			}
 		}
 		#end
 
@@ -1590,7 +1568,6 @@ class PlayState extends MusicBeatState
 				// String for when the game is paused
 				detailsPausedText = "Paused on " + detailsText;
 
-			DiscordClient.changePresence(detailsPausedText, "Version " + Application.current.meta.get('version'), iconRPC);
 		}
 		#end
 
@@ -1779,7 +1756,6 @@ class PlayState extends MusicBeatState
 				var detailsPausedText = "Paused on " + SONG.song;
 
 			#if desktop
-			DiscordClient.changePresence(detailsPausedText, "Version " + Application.current.meta.get('version'), iconRPC);
 			#end
 		}
 
@@ -1788,7 +1764,6 @@ class PlayState extends MusicBeatState
 			FlxG.switchState(new ChartingState());
 
 			#if desktop
-			DiscordClient.changePresence("Chart Editor", "Version " + Application.current.meta.get('version'), null, true);
 			#end
 		}
 
@@ -1995,7 +1970,6 @@ class PlayState extends MusicBeatState
 
 			#if desktop
 			// Game Over doesn't get his own variable because it's only used here
-			DiscordClient.changePresence("Game Over - " + detailsText, "Version " + Application.current.meta.get('version'), iconRPC);
 			#end
 		}
 

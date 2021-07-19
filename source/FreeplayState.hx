@@ -1,8 +1,5 @@
 package;
 
-#if desktop
-import Discord.DiscordClient;
-#end
 import flash.text.TextField;
 import flixel.FlxG;
 import flixel.FlxSprite;
@@ -53,8 +50,7 @@ class FreeplayState extends MusicBeatState
 		 */
 
 		#if desktop
-		// Updating Discord Rich Presence
-		DiscordClient.changePresence("Browsing Songs", "Version " + Application.current.meta.get('version'));
+		// Updating Discord Rich Presence		
 		#end
 
 		var isDebug:Bool = false;

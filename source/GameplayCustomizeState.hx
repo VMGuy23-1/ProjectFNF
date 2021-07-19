@@ -3,7 +3,6 @@ import flixel.FlxCamera;
 import flixel.math.FlxPoint;
 import flixel.FlxObject;
 #if desktop
-import Discord.DiscordClient;
 import sys.thread.Thread;
 #end
 import flixel.group.FlxGroup.FlxTypedGroup;
@@ -35,7 +34,6 @@ class GameplayCustomizeState extends MusicBeatState
 	{
 		#if desktop
 		// Updating Discord Rich Presence
-		DiscordClient.changePresence("Customizing Gameplay", "Version " + Application.current.meta.get('version'));
 		#end
 
 		Conductor.changeBPM(102);
