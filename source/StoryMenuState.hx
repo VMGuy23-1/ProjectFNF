@@ -35,7 +35,7 @@ class StoryMenuState extends MusicBeatState
 
 	var weekCharacters:Array<Dynamic> = [
 		// Characters that are displayed in the story mode menu
-		['dad', 'bf', 'gf'],
+		['gf', 'bf', 'gf'],
 		['dad', 'bf', 'gf'],
 		['spooky', 'bf', 'gf'],
 		['pico', 'bf', 'gf'],
@@ -46,7 +46,7 @@ class StoryMenuState extends MusicBeatState
 
 	var weekNames:Array<String> = [
 		// week names
-		"",
+		"How to funk",
 		"Daddy Dearest",
 		"Spooky Month",
 		"PICO",
