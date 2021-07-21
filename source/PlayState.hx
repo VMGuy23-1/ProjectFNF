@@ -638,13 +638,6 @@ class PlayState extends MusicBeatState
 				gfVersion = 'gf-pixel';
 		}
 
-		if (curStage == 'limo')
-			if (carGf == true)
-			{
-				gfVersion = 'gf-limo'; // vroom
-			}
-			else
-				gfVersion = 'gf-car';
 
 		gf = new Character(400, 130, gfVersion);
 		gf.scrollFactor.set(0.95, 0.95);
